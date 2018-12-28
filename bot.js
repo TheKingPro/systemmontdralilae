@@ -28,7 +28,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/n312ek4a`);
     }, ms);
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
