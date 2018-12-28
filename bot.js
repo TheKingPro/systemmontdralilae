@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const moment = require("moment");  
+const dateFormat = require('dateformat');
 const fs = require('fs');
 const client = new Discord.Client();
 
@@ -16,7 +17,7 @@ client.on('message', message => {
 
   
   if (message.content.startsWith(prefix + 'setwatch')) {
-  client.user.setActivity(argresult, {type: 'WATCHING'})
+  client.user.setActivity(argresult, {type: 'cWATCHING'})
      console.log('test' + argresult);
     message.channel.sendMessage(`Watch Now: **${argresult}`)
 } 
