@@ -9,7 +9,6 @@ const fs = require("fs");
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 var table = require('table').table
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -17,7 +16,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Type -help |-support |'];
+    var setGame = [`${client.guilds.size} Server`,' Type -help','Type -help -support',`${client.users.size} Members`,'-help','Type -help -support'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -28,7 +27,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/n312ek4a`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
@@ -138,8 +137,7 @@ if (message.content === "-help") {
 『-botin/يعرض لك  كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات  عنك』
-『-invite/لدعوه البوت الي سيرفرك 』
-『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
+ccc『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed /البوت يكرر الكلام الي قلته ب امبد
 『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
 『-avatar/صورتك او صورة الي تمنشنو』
@@ -517,7 +515,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
  
 
 client.on("message", message => {
- if (message.content === "-invite") {
+ if (message.content === "-invi12esfte") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
