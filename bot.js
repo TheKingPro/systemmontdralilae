@@ -483,5 +483,4 @@ message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم 
   });
   }
 });
-
 client.login(process.env.BOT_TOKEN);
