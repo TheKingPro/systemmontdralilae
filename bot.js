@@ -9,10 +9,51 @@ const fs = require("fs");
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 var table = require('table').table
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+
+client.on('ready', function(){
+    var ms = 60000 ;
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
+    }, ms);
+    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
+ console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
+ console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
+ console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
+ console.log(` ║╚╩═║╔╗║╚╣╔╗╠╬╬╣╚═╝║ |> Channels: ${client.channels.size}`);
+ console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
+ console.log(` ───────────────╔═╝║`);
+ console.log(` ───────────────╚══╝`);
+
+
+
+ client.on('message', message => {
+     if (message.content === "bot") {
+     let embed = new Discord.RichEmbed()
+
+  .setColor("#51cde6")
+  .addField("Playing on" , client.guilds.size)
+
+
+  message.channel.sendEmbed(embed);
+
+    }
+});
+
 
 console.log('n3k4a is one ');
 client.on('ready', () => {
@@ -64,6 +105,7 @@ const x5bz4 = [
    '*** مريم : ماذا تريد ان تسمع ***',
    '*** مريم : اضغط على الرابط اهداء مني لك | https://www.youtube.com/watch?v=hvSiuQccmtg ***',
    '*** احد ما خرج من المنزل ***',
+   '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدنا في نشر البوت وادخل هذا السيرفر https://discord.gg/ZnPDHaA ***'
 ]
  client.on('message', message => {
  if (message.content.startsWith('-مريم')) {
@@ -97,7 +139,8 @@ if (message.content === "-help") {
 『-botin/يعرض لك  كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات  عنك』
-ccc『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
+『-invite/لدعوه البوت الي سيرفرك 』
+『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed /البوت يكرر الكلام الي قلته ب امبد
 『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
 『-avatar/صورتك او صورة الي تمنشنو』
@@ -109,6 +152,7 @@ ccc『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل �
 『-credit / لكي تري الكرديت الخاص باك』
 『-trans <@someone> <number / للتبرع لحد بلكريدت』
 『-boom /  يطير جبه الي تبي عن طريق المنشن』
+『-sad / يقول للشخص انك خزين بسببه  او زعلان منه عن طريق المنشن』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
 『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
@@ -474,7 +518,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
  
 
 client.on("message", message => {
- if (message.content === "-invi12esfte") {
+ if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
