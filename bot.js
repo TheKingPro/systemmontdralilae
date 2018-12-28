@@ -5,8 +5,6 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Welcome Bro ${client.user.tag}!`);
 });
-streaming
-
 const prefix = '_'
 
 client.on('message', message => {
@@ -61,7 +59,7 @@ client.on('ready', () => {
 });
 client.on('ready', function(){
     var ms = 100000 ;
-    var setGame = [`_help `,`_inv`];
+    var setGame = [`_help`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -99,7 +97,6 @@ client.on("message", message => {
          لكتابة الكلام الذي في الروم اكتب _voicesetup الكلام و 0 
          ------------------------------
          _guilds : عدد سيرفر البوت
-         _inv : دعوه البوت الى سيرفر
          _help : عرض هذه الرسالة
          ------------------------------
          
@@ -219,7 +216,7 @@ client.on('message', function(message) {
     }
 });
 client.on('message', message => {
-if (message.content.startsWith("kick")) {
+if (message.content.startsWith("_kick")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -229,7 +226,7 @@ if (message.content.startsWith("kick")) {
 };
 });
 client.on('message', message => {
-if (message.content.startsWith("ban")) {
+if (message.content.startsWith("_ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -306,28 +303,6 @@ if (message.content.startsWith(prefix+"cv")) {
           
         }
 });
-client.on('message', message => {
-  if (true) {
-if (message.content === '_inv') {
-      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=449359611036827663&permissions=8&scope=bot').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
-
-
-client.on('message', message => {
-     if (message.content === "_inv") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
@@ -341,9 +316,11 @@ return;
         message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
             var bc = new Discord.RichEmbed()
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
+                .addField('» السيرفر :', `${message.guild.name}`)
+                .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
+                .addField(' » الرسالة : ', args)
+                .setColor('#ff0000')
+                // m.send(`[${m}]`);cc
             m.send(`${m}`,{embed: bc});
         });
     }
