@@ -59,7 +59,7 @@ client.on('ready', () => {
 });
 client.on('ready', function(){
     var ms = 100000 ;
-    var setGame = [`_help `,`_help`];
+    var setGame = [`_help `,`_inv`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -97,6 +97,7 @@ client.on("message", message => {
          لكتابة الكلام الذي في الروم اكتب _voicesetup الكلام و 0 
          ------------------------------
          _guilds : عدد سيرفر البوت
+         _inv : دعوه البوت الى سيرفر
          _help : عرض هذه الرسالة
          ------------------------------
          
@@ -216,7 +217,7 @@ client.on('message', function(message) {
     }
 });
 client.on('message', message => {
-if (message.content.startsWith("_kick")) {
+if (message.content.startsWith("kick")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -226,7 +227,7 @@ if (message.content.startsWith("_kick")) {
 };
 });
 client.on('message', message => {
-if (message.content.startsWith("_ban")) {
+if (message.content.startsWith("ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -305,8 +306,8 @@ if (message.content.startsWith(prefix+"cv")) {
 });
 client.on('message', message => {
   if (true) {
-if (message.content === '_lol') {
-      message.author.send('Hi').catch(e => console.log(e.stack));
+if (message.content === '_inv') {
+      message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=449359611036827663&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
     }
    } 
@@ -390,8 +391,9 @@ return;
   message.guild.members.forEach(m => {
 if(!message.member.hasPermission('ADMINISTRATOR')) return;
       var bc = new Discord.RichEmbed()
-      .addField('# | الرسالة ', args)
-      .setThumbnail(message.guild.iconURL)
+                .addField('» السيرفر :', `${message.guild.name}`)
+                .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
+                .addField(' » الرسالة : ', args)
       .setColor('RANDOM')
       m.sendMessage(args)
   });
