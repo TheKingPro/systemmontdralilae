@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const moment = require("moment");  
+const moment = require("moment");
+const Canvas = require("canvas");
 const dateFormat = require('dateformat');
 const fs = require('fs');
 const client = new Discord.Client();
