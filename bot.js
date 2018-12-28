@@ -11,11 +11,11 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== "460389855382470662") return;
+  if (message.author.id !== "457655651984867331") return;
 
   
   if (message.content.startsWith(prefix + 'setwatch')) {
-  client.user.setActivity(argresult, {type: 'cWATCHING'})
+  client.user.setActivity(argresult, {type: 'WATCHING'})
      console.log('test' + argresult);
     message.channel.sendMessage(`Watch Now: **${argresult}`)
 } 
@@ -59,7 +59,7 @@ client.on('ready', () => {
 });
 client.on('ready', function(){
     var ms = 100000 ;
-    var setGame = [`_help`];
+    var setGame = [`_help `,`_help`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -81,7 +81,7 @@ client.on("message", message => {
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**
          ------------------------------
-         _bc1 : برودكاست لجميع اعضاء السيرفر بايمبد
+         _bc : برودكاست لجميع اعضاء السيرفر بايمبد
          _bc2 : برودكاست لجميع اعضاء السيرفر بدون ايمبد
          _bc3 : برودكاست للاعضاء  الاونلاين فقط
          ------------------------------
@@ -304,6 +304,20 @@ if (message.content.startsWith(prefix+"cv")) {
         }
 });
 
+
+client.on('message', message => {
+     if (message.content === "_inv") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
+
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -319,8 +333,8 @@ return;
                 .addField('» السيرفر :', `${message.guild.name}`)
                 .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
                 .addField(' » الرسالة : ', args)
-                .setColor('#ff0000')
-                // m.send(`[${m}]`);cc
+            .setColor('#ff0000')
+            // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
         });
     }
@@ -368,8 +382,9 @@ return;
   message.guild.members.forEach(m => {
 if(!message.member.hasPermission('ADMINISTRATOR')) return;
       var bc = new Discord.RichEmbed()
-      .addField('# | الرسالة ', args)
-      .setThumbnail(message.guild.iconURL)
+                .addField('» السيرفر :', `${message.guild.name}`)
+                .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
+                .addField(' » الرسالة : ', args)
       .setColor('RANDOM')
       m.sendMessage(args)
   });
