@@ -149,7 +149,6 @@ if (message.content === "-help") {
 『-daily /علشان تخد الكرديت اليومي 』
 『-credit / لكي تري الكرديت الخاص باك』
 『-trans <@someone> <number / للتبرع لحد بلكريدت』
-『-boom /  يطير جبه الي تبي عن طريق المنشن』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
 『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
@@ -557,10 +556,10 @@ client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
       .setTitle('Click here')
-      .setURL(' https://discord.gg/ZnPDHaA ')
+      .setURL(' https://discord.gg/McRujEB ')
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
-      .addField('سيرفر الدعم الفني', ` https://discord.gg/ZnPDHaA  `)
+      .addField('سيرفر الدعم الفني', ` https://discord.gg/McRujEB  `)
   message.author.send({embed});
 
  }
