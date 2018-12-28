@@ -303,6 +303,14 @@ if (message.content.startsWith(prefix+"cv")) {
           
         }
 });
+client.on('message', message => {
+  if (true) {
+if (message.content === '_lol') {
+      message.author.send('Hi').catch(e => console.log(e.stack));
+
+    }
+   } 
+  });
 
 
 client.on('message', message => {
@@ -382,9 +390,8 @@ return;
   message.guild.members.forEach(m => {
 if(!message.member.hasPermission('ADMINISTRATOR')) return;
       var bc = new Discord.RichEmbed()
-                .addField('» السيرفر :', `${message.guild.name}`)
-                .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-                .addField(' » الرسالة : ', args)
+      .addField('# | الرسالة ', args)
+      .setThumbnail(message.guild.iconURL)
       .setColor('RANDOM')
       m.sendMessage(args)
   });
