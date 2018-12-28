@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,'Type -help |-support |'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -60,7 +60,7 @@ client.on('ready', () => {
   console.log(`im redey`);
 });
 const x5bz4 = [
-   '*** انا اسمي مريم ***',
+   '*** انا اسمي ؤ ***',
    '*** مرحباَ ماهو اسمك ؟ ***',
    `*** اهلا بك ! انا تائهه في هذا المكان  ***`,
    '*** هل تود مساعدتي ؟ ***',
@@ -105,7 +105,6 @@ const x5bz4 = [
    '*** مريم : ماذا تريد ان تسمع ***',
    '*** مريم : اضغط على الرابط اهداء مني لك | https://www.youtube.com/watch?v=hvSiuQccmtg ***',
    '*** احد ما خرج من المنزل ***',
-   '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدنا في نشر البوت وادخل هذا السيرفر https://discord.gg/ZnPDHaA ***'
 ]
  client.on('message', message => {
  if (message.content.startsWith('-مريم')) {
@@ -139,7 +138,6 @@ if (message.content === "-help") {
 『-botin/يعرض لك  كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات  عنك』
-『-invite/لدعوه البوت الي سيرفرك 』
 『-avatar /للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed /البوت يكرر الكلام الي قلته ب امبد
 『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
@@ -152,7 +150,6 @@ if (message.content === "-help") {
 『-credit / لكي تري الكرديت الخاص باك』
 『-trans <@someone> <number / للتبرع لحد بلكريدت』
 『-boom /  يطير جبه الي تبي عن طريق المنشن』
-『-sad / يقول للشخص انك خزين بسببه  او زعلان منه عن طريق المنشن』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
 『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
@@ -518,7 +515,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
  
 
 client.on("message", message => {
- if (message.content === "-invite") {
+ if (message.content === "-inviewertte") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
